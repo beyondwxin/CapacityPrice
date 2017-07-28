@@ -9,7 +9,7 @@ import java.util.Stack;
 /**
  * @author king
  * @Description:Activity管理类
- * @date 2016-9-5
+ * @date 2016-9-10
  */
 public class AppManager {
     private static Stack<Activity> activityStack;
