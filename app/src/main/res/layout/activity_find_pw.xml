@@ -1,0 +1,76 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="userFindPwByPhone"
+            type="com.king.capacityprice.model.request.UserFindPwByPhone" />
+
+        <import type="android.text.TextUtils"></import>
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".activity.LoginActivity">
+
+        <include layout="@layout/layout_topbar" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_20"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rg_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:checkedButton="@+id/rb_findpwbyphone"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_findpwbyphone"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_selector_findpwbyphone"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10"
+                    android:text="@string/tv_findpwbyphone"
+                    android:textColor="@drawable/selector_clicked" />
+
+                <RadioButton
+                    android:id="@+id/rb_findpwbyemail"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_selector_findpwbyemail"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10"
+                    android:text="@string/tv_findpwbyemail"
+                    android:textColor="@drawable/selector_clicked" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_marginTop="@dimen/padding_30"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</layout>

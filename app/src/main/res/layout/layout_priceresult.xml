@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="boxPrice"
+            type="com.king.capacityprice.model.BoxPrice" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout_price"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_line"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_noPrice"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/size_100"
+                android:text="暂无价格"
+                android:textSize="@dimen/textsize_18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_10"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/rg_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:checkedButton="@+id/rb_3"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_3"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_button_choosedaybg"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:textColor="@drawable/selector_clicked"
+                        android:textSize="@dimen/textsize_16" />
+
+                    <RadioButton
+                        android:id="@+id/rb_5"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_button_choosedaybg"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:textColor="@drawable/selector_clicked"
+                        android:textSize="@dimen/textsize_16" />
+
+                    <RadioButton
+                        android:id="@+id/rb_7"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_button_choosedaybg"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:textColor="@drawable/selector_clicked"
+                        android:textSize="@dimen/textsize_16" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="@dimen/padding_10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:src="@drawable/ic_20gp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dividing_5"
+                    android:text="20GP"
+                    android:textColor="@color/color_showAddress"
+                    android:textSize="@dimen/textsize_16" />
+
+                <ImageView
+                    android:id="@+id/iv_price20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:src="@drawable/price" />
+
+                <TextView
+                    android:id="@+id/tv_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:text="@={boxPrice.price20}"
+                    android:textColor="@color/color_showAddress"
+                    android:textSize="@dimen/textsize_16" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="@dimen/padding_10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:src="@drawable/ic_40gp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dividing_5"
+                    android:text="40GP"
+                    android:textColor="@color/color_showAddress"
+                    android:textSize="@dimen/textsize_16" />
+
+                <ImageView
+                    android:id="@+id/iv_price40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:src="@drawable/price" />
+
+                <TextView
+                    android:id="@+id/tv_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:text="@={boxPrice.price40}"
+                    android:textColor="@color/color_showAddress"
+                    android:textSize="@dimen/textsize_16" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="@dimen/padding_10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:src="@drawable/ic_35t" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dividing_5"
+                    android:text="20英尺35T箱"
+                    android:textColor="@color/color_showAddress"
+                    android:textSize="@dimen/textsize_16" />
+
+                <ImageView
+                    android:id="@+id/iv_price35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:src="@drawable/price" />
+
+                <TextView
+                    android:id="@+id/tv_35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dividing_5"
+                    android:text="@={boxPrice.price35}"
+                    android:textColor="@color/color_showAddress"
+                    android:textSize="@dimen/textsize_16" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#FF3CA0F4</color>
+    <color name="colorBlue">#FF3CA0F4</color>
+    <color name="colorAccent">#FFEBEBEB</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorblack">#222222</color>
+    <color name="black">#000000</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="color_loginButton">#266ad0</color>
+    <color name="color_forgetPassword">#999</color>
+    <color name="color_line">#e8e8e8</color>
+    <color name="gray_line">#66b4b4b4</color>
+    <color name="color_div">#eeeeee</color>
+    <color name="colorGray">#FF999999</color>
+    <color name="blue">#4287FF</color>
+    <color name="sc_transparent_background">#00111111</color>
+    <color name="color_showAddress">#333</color>
+    <color name="color_maintop">#134ea3</color>
+    <color name="color_routeline">#34BBF8</color>
+    <color name="list_item_focus">#0a000000</color>
+    <color name="white_alpha_percent_45">#73ffffff</color>
+    <color name="text_gray">#7b403b37</color>
+    <color name="base_red">#fffb6655</color>
+    <color name="default_line_color">#e6e6e6</color>
+    <color name="app_main_color">#FF6347</color>
+    <color name="text_clearhistory">#E23A4F</color>
+    <color name="background">#F8F8F8</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_flag">#689fff</color>
+    <color name="bg_yzm">#ffa800</color>
+
+    <!--扫码安装-->
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+
+    <color name="text_10">#333333</color>
+    <color name="text_11">#999999</color>
+    <color name="topbar_3">#339EFE</color>
+    <color name="line">#dddddd</color>
+</resources>

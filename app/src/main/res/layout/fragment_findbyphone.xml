@@ -1,0 +1,227 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="userFindPwByPhone"
+            type="com.king.capacityprice.model.request.UserFindPwByPhone" />
+
+        <import type="android.text.TextUtils"></import>
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".activity.FindPwAvtivity">
+
+        <LinearLayout
+            android:id="@+id/ll_byPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="35dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_phone"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_phone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:text="@={userFindPwByPhone.phone}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+                <ImageView
+                    android:id="@+id/clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:visibility="@{!TextUtils.isEmpty(userFindPwByPhone.phone)?View.VISIBLE : View.GONE}"
+                    android:onClick="onClick"
+                    android:src="@drawable/ic_close" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="53dp"
+                android:layout_marginRight="38dp"
+                android:background="@color/color_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:visibility="@{!userFindPwByPhone.status?View.VISIBLE:View.GONE}"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_yzm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_yzm"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_yzm"
+                    android:singleLine="true"
+                    android:text="@={userFindPwByPhone.yzm}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+                <TextView
+                    android:id="@+id/tv_getcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/shape_yzm"
+                    android:enabled="@{(!TextUtils.isEmpty(userFindPwByPhone.phone))&amp;&amp;userFindPwByPhone.click}"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:text="@={userFindPwByPhone.getAuthCode}"
+                    android:textColor="@color/bg_yzm"
+                    android:textSize="@dimen/padding_15" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="57dp"
+                android:visibility="@{!userFindPwByPhone.status?View.VISIBLE:View.GONE}"
+                android:layout_marginRight="150dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{userFindPwByPhone.status?View.VISIBLE:View.GONE}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/ic_registerpw"
+                        android:drawablePadding="@dimen/padding_20"
+                        android:hint="@string/hint_inputpw"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text="@={userFindPwByPhone.password}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_16" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dividing_1"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginRight="38dp"
+                    android:background="@color/color_line" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_passwordconf"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/ic_registerpw"
+                        android:drawablePadding="@dimen/padding_20"
+                        android:hint="@string/hint_inputpw2"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text="@={userFindPwByPhone.confirmPassword}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_16" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dividing_1"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginRight="38dp"
+                    android:background="@color/color_line" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="310dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/selector_button_loginbg"
+                android:enabled="@{!TextUtils.isEmpty(userFindPwByPhone.phone)&amp;&amp;!TextUtils.isEmpty(userFindPwByPhone.yzm)}"
+                android:onClick="onClick"
+                android:text="@string/tv_submit"
+                android:visibility="@{!userFindPwByPhone.status?View.VISIBLE:View.GONE}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_18" />
+
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="310dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/selector_button_loginbg"
+                android:enabled="@{!TextUtils.isEmpty(userFindPwByPhone.phone)&amp;&amp;!TextUtils.isEmpty(userFindPwByPhone.password)&amp;&amp;!TextUtils.isEmpty(userFindPwByPhone.confirmPassword)}"
+                android:onClick="onClick"
+                android:visibility="@{userFindPwByPhone.status?View.VISIBLE:View.GONE}"
+                android:text="@string/tv_confirmModify"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_18" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>

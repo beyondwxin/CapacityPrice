@@ -1,0 +1,298 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="userRegister"
+            type="com.king.capacityprice.model.request.UserRegister"></variable>
+
+        <import type="android.text.TextUtils"></import>
+
+        <import type="android.view.View" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activity.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_topbar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="35dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_phone"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_phone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:text="@={userRegister.phone}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+                <ImageView
+                    android:id="@+id/clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:src="@drawable/ic_close"
+                    android:visibility="@{!TextUtils.isEmpty(userRegister.phone)?View.VISIBLE : View.GONE}" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="53dp"
+                android:layout_marginRight="38dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_yzm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_yzm"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_yzm"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:text="@={userRegister.yzm}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+                <TextView
+                    android:id="@+id/tv_getcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/shape_yzm"
+                    android:enabled="@{(!TextUtils.isEmpty(userRegister.phone))&amp;&amp;userRegister.click}"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:text="@={userRegister.getAuthCode}"
+                    android:textColor="@color/bg_yzm"
+                    android:textSize="@dimen/padding_15" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="87dp"
+                android:layout_marginRight="140dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_email"
+                    android:singleLine="true"
+                    android:text="@={userRegister.email}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="53dp"
+                android:layout_marginRight="38dp"
+                android:background="@color/color_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_registerpw"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_inputpw"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:text="@={userRegister.password}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="53dp"
+                android:layout_marginRight="38dp"
+                android:background="@color/color_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_passwordconf"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/ic_registerpw"
+                    android:drawablePadding="@dimen/padding_20"
+                    android:hint="@string/hint_inputpw2"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:text="@={userRegister.confirmPassword}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_16" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividing_1"
+                android:layout_marginLeft="53dp"
+                android:layout_marginRight="38dp"
+                android:background="@color/color_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_show"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/selector_agree"
+                    android:button="@null" />
+
+                <TextView
+                    android:id="@+id/tv_argee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/tv_agree"
+                    android:textColor="@color/colorGray"
+                    android:textSize="@dimen/textsize_14" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="310dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selector_button_loginbg"
+                android:enabled="@{!TextUtils.isEmpty(userRegister.phone)&amp;&amp;!TextUtils.isEmpty(userRegister.yzm)&amp;&amp;!TextUtils.isEmpty(userRegister.password)&amp;&amp;!TextUtils.isEmpty(userRegister.email)&amp;&amp;!TextUtils.isEmpty(userRegister.confirmPassword)}"
+                android:onClick="onClick"
+                android:text="@string/text_register"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="3dp"
+                    android:text="@string/tv_tip"
+                    android:textColor="@color/color_forgetPassword"
+                    android:textSize="@dimen/textsize_13" />
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:text="@string/text_login"
+                    android:textColor="@color/bg_yzm"
+                    android:textSize="@dimen/textsize_14" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_line" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>
